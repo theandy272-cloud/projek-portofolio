@@ -1,0 +1,27 @@
+<!-- ============================================================
+     Reusable component: Navbar
+     This is a standalone markup partial. The production markup
+     lives inline in index.html so the single-page site works
+     without a build step; keep this file in sync when editing.
+     ============================================================ -->
+<header class="navbar" id="navbar">
+    <nav class="nav container">
+        <a href="#hero" class="nav__brand">
+            <span class="nav__brand-mark">AW</span>
+            <span class="nav__brand-text">Andi Wahyudi</span>
+        </a>
+
+        <ul class="nav__menu" id="navMenu">
+            <li><a href="#hero" class="nav__link is-active">Beranda</a></li>
+            <li><a href="#about" class="nav__link">Tentang</a></li>
+            <li><a href="#skills" class="nav__link">Keahlian</a></li>
+            <li><a href="#projects" class="nav__link">Project</a></li>
+            <li><a href="#experience" class="nav__link">Pengalaman</a></li>
+            <li><a href="#contact" class="nav__link">Kontak</a></li>
+        </ul>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>

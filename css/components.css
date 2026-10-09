@@ -1,0 +1,247 @@
+/* ============================================================
+   components.css — Reusable UI: navbar, buttons, glass, badges
+   ============================================================ */
+
+/* ---- Glassmorphism surface ---- */
+.glass {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    transition: transform var(--dur) var(--ease),
+                border-color var(--dur) var(--ease),
+                box-shadow var(--dur) var(--ease);
+}
+
+/* ---- Navbar ---- */
+.navbar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    transition: background 0.4s var(--ease), border-color 0.4s var(--ease),
+                box-shadow 0.4s var(--ease);
+    border-bottom: 1px solid transparent;
+}
+
+.navbar.is-scrolled {
+    background: rgba(6, 8, 20, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+}
+
+.nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.nav__brand-mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--grad-btn);
+    box-shadow: 0 0 18px var(--glow);
+}
+
+.nav__menu {
+    display: flex;
+    gap: 6px;
+}
+
+.nav__link {
+    position: relative;
+    padding: 9px 14px;
+    border-radius: 10px;
+    font-size: 0.94rem;
+    color: var(--text-soft);
+    transition: color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.nav__link:hover { color: var(--text); background: var(--surface); }
+
+.nav__link.is-active {
+    color: var(--text);
+}
+
+.nav__link.is-active::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--grad-btn);
+    box-shadow: 0 0 10px var(--glow);
+}
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+}
+
+.nav__toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.nav__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- Buttons ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 0.96rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
+                background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.btn svg { transition: transform 0.3s var(--ease); }
+.btn:hover svg { transform: translateX(3px); }
+
+.btn--primary {
+    color: #fff;
+    background: var(--grad-btn);
+    box-shadow: 0 8px 26px var(--glow);
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 38px var(--glow), 0 0 24px var(--glow-cyan);
+}
+
+.btn--ghost {
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+}
+
+.btn--ghost:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(124, 92, 255, 0.2);
+}
+
+.btn--block { width: 100%; }
+
+/* ---- Badge (availability) ---- */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 15px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text-soft);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-transform: capitalize;
+}
+
+.badge__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #2ee6a6;
+    box-shadow: 0 0 0 0 rgba(46, 230, 166, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(46, 230, 166, 0.55); }
+    70%  { box-shadow: 0 0 0 9px rgba(46, 230, 166, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 230, 166, 0); }
+}
+
+/* ---- Floating chips ---- */
+.floating-chip {
+    position: absolute;
+    padding: 10px 16px;
+    border-radius: 14px;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--text);
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.chip--1 { top: 6%; left: -6%; animation-delay: 0s; }
+.chip--2 { bottom: 16%; left: -10%; animation-delay: 1.4s; }
+.chip--3 { bottom: 4%; right: -4%; animation-delay: 2.6s; }
+
+/* ---- Form fields ---- */
+.field { margin-bottom: 16px; text-align: left; }
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border);
+    transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder { color: var(--text-dim); }
+
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.18);
+}
+
+.form-status {
+    margin-top: 12px;
+    font-size: 0.88rem;
+    color: var(--accent-2);
+    min-height: 1.2em;
+}

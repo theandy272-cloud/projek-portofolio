@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portofolio Andi Wahyudi — Math Teacher. Matematika Untuk Indonesia." />
+    <meta name="author" content="Andi Wahyudi" />
+    <title>Andi Wahyudi — Math Teacher</title>
+    <link rel="icon" type="image/svg+xml" href="assets/avatar.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+    <!-- Animated gradient background + particles -->
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <canvas id="particles" class="particles" aria-hidden="true"></canvas>
+
+    <!-- ===== Navbar ===== -->
+    <header class="navbar" id="navbar">
+        <nav class="nav container">
+            <a href="#hero" class="nav__brand">
+                <span class="nav__brand-mark">AW</span>
+                <span class="nav__brand-text">Andi Wahyudi</span>
+            </a>
+
+            <ul class="nav__menu" id="navMenu">
+                <li><a href="#hero" class="nav__link is-active">Beranda</a></li>
+                <li><a href="#about" class="nav__link">Tentang</a></li>
+                <li><a href="#skills" class="nav__link">Keahlian</a></li>
+                <li><a href="#projects" class="nav__link">Project</a></li>
+                <li><a href="#experience" class="nav__link">Pengalaman</a></li>
+                <li><a href="#contact" class="nav__link">Kontak</a></li>
+            </ul>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== Hero ===== -->
+        <section class="hero" id="hero">
+            <div class="container hero__inner">
+                <div class="hero__content reveal">
+                    <span class="badge">
+                        <span class="badge__dot"></span>
+                        Available for opportunities
+                    </span>
+
+                    <h1 class="hero__title">
+                        Halo, saya <span class="gradient-text">Andi Wahyudi</span>
+                    </h1>
+
+                    <h2 class="hero__typed">
+                        <span class="hero__typed-prefix">Saya seorang </span>
+                        <span class="typewriter" id="typewriter"></span>
+                        <span class="caret">|</span>
+                    </h2>
+
+                    <p class="hero__tagline">"Matematika Untuk Indonesia."</p>
+
+                    <p class="hero__desc">
+                        Pendidik matematika yang berbasis di Cirebon, Indonesia. Mengubah
+                        konsep abstrak menjadi pemahaman yang nyata, satu siswa pada satu waktu.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="#projects" class="btn btn--primary">
+                            Lihat Project
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
+                        <a href="assets/andi-wahyudi-resume.pdf" class="btn btn--ghost" download>
+                            Download Resume
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                        </a>
+                    </div>
+
+                    <ul class="hero__socials">
+                        <li><a href="https://github.com/Andiwahyudidev" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/andiwahyudidev" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>
+                        <li><a href="https://x.com/andiwahyudidev" target="_blank" rel="noopener" aria-label="Twitter / X">X</a></li>
+                    </ul>
+                </div>
+
+                <div class="hero__visual reveal">
+                    <div class="profile-card float">
+                        <div class="profile-card__glow"></div>
+                        <div class="profile-card__photo" aria-label="Foto profil Andi Wahyudi">
+                            <img src="Aset/WhatsApp Image 2026-09-28 at 09.07.23 (2).jpeg" alt="Foto profil Andi Wahyudi" loading="lazy" />
+                        </div>
+                        <div class="profile-card__info">
+                            <h3>Andi Wahyudi</h3>
+                            <p>Math Teacher</p>
+                            <span class="profile-card__loc">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                                Cirebon, Indonesia
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="floating-chip chip--1 float">∑ Aljabar</div>
+                    <div class="floating-chip chip--2 float">π Geometri</div>
+                    <div class="floating-chip chip--3 float">∫ Kalkulus</div>
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-cue" aria-label="Gulir ke bawah">
+                <span class="scroll-cue__mouse"></span>
+            </a>
+        </section>
+
+        <!-- ===== About ===== -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">01 — Tentang</span>
+                    <h2 class="section__title">Mengenal <span class="gradient-text">Andi</span></h2>
+                </div>
+
+                <div class="about__grid">
+                    <div class="about__photo reveal">
+                        <div class="about__photo-frame">
+                            <img src="Aset/WhatsApp Image 2026-09-28 at 09.07.23 (2).jpeg" alt="Andi Wahyudi mengajar di kelas" loading="lazy" />
+                        </div>
+                    </div>
+
+                    <div class="glass about__bio reveal">
+                        <p>
+                            Saya adalah seorang <strong>Math Teacher</strong> yang percaya bahwa setiap
+                            siswa mampu memahami matematika bila diajarkan dengan cara yang tepat.
+                            Dengan pendekatan yang sabar, kontekstual, dan interaktif, saya membantu
+                            siswa membangun fondasi logika yang kuat.
+                        </p>
+                        <p>
+                            Misi saya sederhana namun besar: <em>"Matematika Untuk Indonesia."</em>
+                            Menjadikan matematika sebagai alat berpikir yang menyenangkan dan relevan
+                            untuk generasi mendatang.
+                        </p>
+                    </div>
+
+                    <div class="about__stats">
+                        <div class="glass stat reveal">
+                            <span class="stat__num" data-count="8">0</span><span class="stat__plus">+</span>
+                            <span class="stat__label">Tahun Mengajar</span>
+                        </div>
+                        <div class="glass stat reveal">
+                            <span class="stat__num" data-count="500">0</span><span class="stat__plus">+</span>
+                            <span class="stat__label">Siswa Dibimbing</span>
+                        </div>
+                        <div class="glass stat reveal">
+                            <span class="stat__num" data-count="30">0</span><span class="stat__plus">+</span>
+                            <span class="stat__label">Kelas Olimpiade</span>
+                        </div>
+                        <div class="glass stat reveal">
+                            <span class="stat__num" data-count="98">0</span><span class="stat__plus">%</span>
+                            <span class="stat__label">Tingkat Kelulusan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Skills ===== -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">02 — Keahlian</span>
+                    <h2 class="section__title">Bidang <span class="gradient-text">Keahlian</span></h2>
+                </div>
+
+                <div class="skills__grid">
+                    <article class="glass skill-card reveal">
+                        <div class="skill-card__icon">∑</div>
+                        <h3>Aljabar &amp; Logika</h3>
+                        <p>Pengajaran aljabar, persamaan, dan penalaran logis dari dasar hingga lanjutan.</p>
+                    </article>
+                    <article class="glass skill-card reveal">
+                        <div class="skill-card__icon">π</div>
+                        <h3>Geometri &amp; Trigonometri</h3>
+                        <p>Visualisasi bentuk dan ruang untuk membangun intuisi spasial siswa.</p>
+                    </article>
+                    <article class="glass skill-card reveal">
+                        <div class="skill-card__icon">∫</div>
+                        <h3>Kalkulus</h3>
+                        <p>Membedah konsep limit, turunan, dan integral dengan contoh kontekstual.</p>
+                    </article>
+                    <article class="glass skill-card reveal">
+                        <div class="skill-card__icon">σ</div>
+                        <h3>Statistika</h3>
+                        <p>Mengajar peluang dan analisis data agar siswa melek angka dan informasi.</p>
+                    </article>
+                    <article class="glass skill-card reveal">
+                        <div class="skill-card__icon">🏆</div>
+                        <h3>Persiapan Olimpiade</h3>
+                        <p>Pelatihan intensif pemecahan masalah untuk kompetisi matematika.</p>
+                    </article>
+                    <article class="glass skill-card reveal">
+                        <div class="skill-card__icon">💡</div>
+                        <h3>Pembelajaran Digital</h3>
+                        <p>Pemanfaatan media interaktif dan teknologi untuk kelas yang menarik.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Projects ===== -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">03 — Project</span>
+                    <h2 class="section__title">Project &amp; <span class="gradient-text">Inisiatif</span></h2>
+                </div>
+
+                <div class="projects__grid">
+                    <article class="glass project-card reveal">
+                        <div class="project-card__top">
+                            <span class="project-card__tag">Edukasi</span>
+                            <span class="project-card__year">2024</span>
+                        </div>
+                        <h3>MathForID</h3>
+                        <p>Platform latihan soal matematika gratis dengan pembahasan video untuk siswa SMP &amp; SMA se-Indonesia.</p>
+                        <div class="project-card__stack">
+                            <span>Kurikulum</span><span>Video</span><span>Komunitas</span>
+                        </div>
+                        <a href="#" class="project-card__link">Lihat detail →</a>
+                    </article>
+
+                    <article class="glass project-card reveal">
+                        <div class="project-card__top">
+                            <span class="project-card__tag">Olimpiade</span>
+                            <span class="project-card__year">2023</span>
+                        </div>
+                        <h3>Kelas Olimpiade Cirebon</h3>
+                        <p>Program pembinaan siswa berbakat yang mengantar peserta meraih medali tingkat provinsi.</p>
+                        <div class="project-card__stack">
+                            <span>Problem Solving</span><span>Mentoring</span>
+                        </div>
+                        <a href="#" class="project-card__link">Lihat detail →</a>
+                    </article>
+
+                    <article class="glass project-card reveal">
+                        <div class="project-card__top">
+                            <span class="project-card__tag">Konten</span>
+                            <span class="project-card__year">2022</span>
+                        </div>
+                        <h3>Matematika Harian</h3>
+                        <p>Seri konten singkat harian yang menyederhanakan konsep sulit menjadi mudah dipahami.</p>
+                        <div class="project-card__stack">
+                            <span>Konten</span><span>Sosial Media</span>
+                        </div>
+                        <a href="#" class="project-card__link">Lihat detail →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Experience ===== -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">04 — Pengalaman</span>
+                    <h2 class="section__title">Perjalanan <span class="gradient-text">Karier</span></h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"></div>
+                        <div class="glass timeline__card">
+                            <span class="timeline__period">2020 — Sekarang</span>
+                            <h3>Guru Matematika Senior</h3>
+                            <span class="timeline__org">SMA Negeri, Cirebon</span>
+                            <p>Memimpin kurikulum matematika dan membimbing tim pengajar junior.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"></div>
+                        <div class="glass timeline__card">
+                            <span class="timeline__period">2017 — 2020</span>
+                            <h3>Guru Matematika</h3>
+                            <span class="timeline__org">Bimbingan Belajar, Cirebon</span>
+                            <p>Mengajar kelas persiapan ujian dengan tingkat kelulusan tinggi.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item reveal">
+                        <div class="timeline__dot"></div>
+                        <div class="glass timeline__card">
+                            <span class="timeline__period">2016 — 2017</span>
+                            <h3>Asisten Pengajar</h3>
+                            <span class="timeline__org">Universitas, Jawa Barat</span>
+                            <p>Mendampingi perkuliahan kalkulus dan aljabar linear.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">05 — Kontak</span>
+                    <h2 class="section__title">Mari <span class="gradient-text">Terhubung</span></h2>
+                </div>
+
+                <div class="contact__grid">
+                    <div class="contact__info reveal">
+                        <p class="contact__lead">
+                            Punya pertanyaan, kolaborasi, atau ingin mengundang mengajar?
+                            Jangan ragu untuk menghubungi saya.
+                        </p>
+                        <ul class="contact__list">
+                            <li>
+                                <span class="contact__k">Email</span>
+                                <a href="mailto:theandy272@gmail.com">theandy272@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="contact__k">Telepon</span>
+                                <a href="tel:+6285188334852">085188334852</a>
+                            </li>
+                            <li>
+                                <span class="contact__k">Portofolio</span>
+                                <a href="https://www.Andiwahyudi.dev" target="_blank" rel="noopener">www.Andiwahyudi.dev</a>
+                            </li>
+                            <li>
+                                <span class="contact__k">Lokasi</span>
+                                <span>Cirebon, Indonesia</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="glass contact__form reveal" id="contactForm" novalidate>
+                        <div class="field">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
+                        </div>
+                        <div class="field">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--block">Kirim Pesan</button>
+                        <p class="form-status" id="formStatus" role="status"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span>© <span id="year"></span> Andi Wahyudi — Matematika Untuk Indonesia.</span>
+            <div class="footer__socials">
+                <a href="https://github.com/Andiwahyudidev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/andiwahyudidev" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://x.com/andiwahyudidev" target="_blank" rel="noopener">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

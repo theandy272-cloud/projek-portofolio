@@ -1,0 +1,177 @@
+/* ============================================================
+   base.css — Design tokens, reset, background & typography
+   ============================================================ */
+
+:root {
+    /* Palette — dark modern developer theme */
+    --bg-900: #060814;
+    --bg-800: #0a0e1f;
+    --bg-700: #0f1428;
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-strong: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.09);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    /* Text */
+    --text: #e8ecf6;
+    --text-soft: #a7b0c6;
+    --text-dim: #6b7490;
+
+    /* Accents (soft glow) */
+    --accent: #7c5cff;      /* violet */
+    --accent-2: #22d3ee;    /* cyan   */
+    --accent-3: #f472b6;    /* pink   */
+    --glow: rgba(124, 92, 255, 0.45);
+    --glow-cyan: rgba(34, 211, 238, 0.35);
+
+    /* Gradients */
+    --grad-text: linear-gradient(100deg, #a78bfa 0%, #22d3ee 50%, #f472b6 100%);
+    --grad-btn: linear-gradient(100deg, #7c5cff 0%, #22d3ee 100%);
+
+    /* Layout */
+    --maxw: 1180px;
+    --radius: 18px;
+    --radius-sm: 12px;
+
+    /* Motion */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur: 0.5s;
+
+    /* Fonts */
+    --font: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg-900);
+    color: var(--text);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+::selection {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ---- Layout helpers ---- */
+.container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+.gradient-text {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* ---- Animated gradient background ---- */
+.bg-gradient {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(50% 55% at 15% 20%, rgba(124, 92, 255, 0.22), transparent 60%),
+        radial-gradient(45% 50% at 85% 15%, rgba(34, 211, 238, 0.18), transparent 60%),
+        radial-gradient(55% 60% at 70% 90%, rgba(244, 114, 182, 0.15), transparent 60%),
+        var(--bg-900);
+    background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
+    animation: gradientShift 18s var(--ease) infinite alternate;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+    50%  { background-position: 50% 50%, 50% 40%, 20% 60%, 0 0; }
+    100% { background-position: 100% 100%, 0% 100%, 80% 10%, 0 0; }
+}
+
+.particles {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ---- Typography scale ---- */
+h1, h2, h3 {
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* ---- Scroll reveal base ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---- Floating animation ---- */
+.float {
+    animation: floaty 6s ease-in-out infinite;
+}
+
+@keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-14px); }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+}
